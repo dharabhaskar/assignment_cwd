@@ -1,0 +1,47 @@
+1)
+Write a program to check student grade based on marks
+Description:
+Write a program to check student grade based on the marks using if-else statement.
+
+Conditions:
+If marks are 60% or more, grade will be First Division.
+If marks between 45% to 59%, grade will be Second Division.
+If marks between 33% to 44%, grade will be Third Division.
+If marks are less than 33%, student will be Fail.
+
+----------------------------------------------------------------------------------------------------------------
+
+2)
+Remove specific element by value from an array in PHP?
+Description:
+You need to write a program in PHP to remove specific element by value from an array using PHP program.
+
+Instructions:
+Take an array with list of month names.
+Take a variable with the name of value to be deleted.
+You can use PHP array functions or foreach loop.
+
+----------------------------------------------------------------------------------------------------------------
+
+3)
+Write a PHP program to check if a person is eligible to vote
+
+Description:
+Write a PHP program to check if a person is eligible to vote or not.
+
+Condition
+Minimum age required for vote is 18.
+You can use PHP Functions.
+You can use Decision Making Statements.
+
+----------------------------------------------------------------------------------------------------------------
+
+4)
+Write a PHP program to check whether a number is positive, negative or zero
+Description:
+Write a PHP program to check whether a number is positive, negative or zero.
+
+Instructions:
+You can use if else conditions.
+You should use appropriate PHP Operators.
+Also check if it not a numeric value.
