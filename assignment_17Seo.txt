@@ -1,3 +1,8 @@
+Sample
+///
+Take two numbers and show which is grater.
+
+
 1)
 Write a program to check student grade based on marks
 Description:
