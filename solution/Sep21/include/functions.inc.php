@@ -1,19 +1,20 @@
 <?php
-function connect_db(){
-    $server='localhost';
-    $userid='test';
-    $password='1234';
-    $db='mydb2';
+function connect_db()
+{
+    $server = 'localhost';
+    $userid = 'test';
+    $password = '1234';
+    $db = 'mydb2';
 
-    $con=mysqli_connect($server,$userid,$password,$db);
-    if(!$con){
+    $con = mysqli_connect($server, $userid, $password, $db);
+    if (!$con) {
         //header('location:../index.php?error=dbconfailed');
         echo 'db connection failed.';
     }
     return $con;
 }
 
-function add_record($con,$pname,$description,$price)
+function add_record($con, $pname, $description, $price)
 {
     $sql = "insert into product(pname,description,price) values(?,?,?)";
     $stmt = mysqli_stmt_init($con);
@@ -21,7 +22,7 @@ function add_record($con,$pname,$description,$price)
         //header('location:../index.php?error=stmtfailed');
         echo 'invalid sql';
     }
-    mysqli_stmt_bind_param($stmt, 'ssd', $pname,$description,$price);
+    mysqli_stmt_bind_param($stmt, 'ssd', $pname, $description, $price);
 
     $result = mysqli_stmt_execute($stmt);
 
@@ -37,7 +38,7 @@ var_dump($res); */
 
 function delete_record($con)
 {
-    $sql = "";
+    $sql = "delete from product where id=?";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header('location:../index.php?error=stmtfailed');
@@ -85,4 +86,3 @@ function fetch_record($con)
 
     return $result;
 }
-
