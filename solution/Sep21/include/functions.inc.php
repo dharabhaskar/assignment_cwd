@@ -36,14 +36,14 @@ $res=add_record($con,'dell laptop 14','ryzen 5500 4GB RAM',52500.00);
 var_dump($res); */
 
 
-function delete_record($con, $imgId, $filepath)
+function delete_record($con, $id)
 {
     $sql = "delete from product where id=?";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header('location:../index.php?error=stmtfailed');
     }
-    mysqli_stmt_bind_param($stmt, 'i', $imgId);
+    mysqli_stmt_bind_param($stmt, 'i', $id);
 
     $result = mysqli_stmt_execute($stmt);
 
@@ -53,7 +53,7 @@ function delete_record($con, $imgId, $filepath)
     return $result;
 }
 
-function update_record($con, $id, $pname, $description, $price )
+function update_record($con, $id, $pname, $description, $price)
 {
     $sql = "update product set pname=?, description=?, price=? where id=?";
     $stmt = mysqli_stmt_init($con);
@@ -70,7 +70,7 @@ function update_record($con, $id, $pname, $description, $price )
     return $result;
 }
 
-function fetch_record($con,$id)
+function fetch_record($con, $id)
 {
     $sql = "select * from product";
     $stmt = mysqli_stmt_init($con);
