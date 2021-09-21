@@ -69,14 +69,14 @@ function update_record($con)
     return $result;
 }
 
-function fetch_record($con)
+function fetch_record($con,$id)
 {
-    $sql = "";
+    $sql = "select * from product";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header('location:../index.php?error=stmtfailed');
     }
-    mysqli_stmt_bind_param($stmt, 'i', $imgId);
+    //mysqli_stmt_bind_param($stmt, 'i', $Id);
 
     $result = mysqli_stmt_execute($stmt);
 
