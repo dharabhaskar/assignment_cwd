@@ -3,14 +3,11 @@
         $div='';
           if ($marks>=60){
             $div='First Division';
-          }
-            else if ($marks>=45){
+          }else if ($marks>=45){
              $div='Second Division';
-          }
-            else if ($marks>=33){
+          }else if ($marks>=33){
              $div='third division';
-          }
-            else{
+          }else{
              $div='Fail';
           }    
      
@@ -20,7 +17,7 @@
   
 
   function checkage($age){
-    $age ='';
+    //$age ='';
     if($age>=18){
       echo"<h2>You are eligible for vote</h2>";
     }
@@ -32,7 +29,7 @@
   }
 
   function checknumber($number){
-    $number ='';
+    //$number ='';
     if($number > 0){
       echo $number . "is a positive number";
     }
@@ -47,10 +44,5 @@
     }
 
   }
-
-  function 
-
-
-
 
 ?>
