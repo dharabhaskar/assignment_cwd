@@ -36,7 +36,7 @@ $res=add_record($con,'dell laptop 14','ryzen 5500 4GB RAM',52500.00);
 var_dump($res); */
 
 
-function delete_record($con)
+function delete_record($con, $imgId, $filepath)
 {
     $sql = "delete from product where id=?";
     $stmt = mysqli_stmt_init($con);
