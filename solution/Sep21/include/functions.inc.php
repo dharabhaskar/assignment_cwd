@@ -53,14 +53,14 @@ function delete_record($con)
     return $result;
 }
 
-function update_record($con, $pname, $description, $price )
+function update_record($con, $id, $pname, $description, $price )
 {
     $sql = "update product set pname=?, description=?, price=? where id=?";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header('location:../index.php?error=stmtfailed');
     }
-    mysqli_stmt_bind_param($stmt, 'ssd', $pname, $description, $price);
+    mysqli_stmt_bind_param($stmt, 'ssdi', $pname, $description, $price, $id);
 
     $result = mysqli_stmt_execute($stmt);
 
