@@ -23,4 +23,24 @@ function checkGrade($marks){
     printf("You got %s Division",$div);
 }
 
-checkGrade(28);
+function removeMonth($monToRemove){
+    //Create array with all month names.
+    $mon_name_text="Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec";
+    $months=explode(",",$mon_name_text);
+
+    //Search the month to remove
+    $index=array_search($monToRemove,$months);
+
+    if($index!==false){
+        //if available remove it
+        unset($months[$index]);
+        foreach($months as $m){
+            echo "$m <br/>";
+        }
+    }else{
+        //if not found show message.
+        echo "$monToRemove not found.";
+    }
+}
+
+removeMonth('rerieuri');
