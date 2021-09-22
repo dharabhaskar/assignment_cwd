@@ -8,9 +8,9 @@
     <title>Gradesheet</title>
 </head>
 <body>
-     <form method="POST" action='include/mark.inc.php'>
+     <form method="POST" action="include/mark.inc.php">
          Marks<input type="text" name="marks">
-         checkgrade<input type="submit" name="submit" value="checkgrade">
+         <input type="submit" name="submit" value="checkgrade">
 
      </form>
 </body>

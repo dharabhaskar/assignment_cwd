@@ -9,11 +9,12 @@
 <body>
     <h1>Product Management</h1>
 
-    <form action="action/product.inc.php" method="POST">
+    <form action="include/product.inc.php" method="POST">
+    <input type="hidden" name="id" id="id"><br/>
         Product Name: <input type="text" name="pname" id="pname"><br/>
         Product Desc: <input type="text" name="description" id="description"><br/>
         Product Price: <input type="text" name="price" id="price"><br/>
-        <input type="button" value="Submit" name="submit">
+        <input type="submit" value="submit" name="submit">
     </form>
     <br/>
     <br/>
@@ -29,7 +30,7 @@
         </tr>
         <?php
             $products=array(
-                array("id"=>1,"pname"=>"keyboard","price"=>650.20)
+                array("id"=>1,"pname"=>"keyboard","description"=>"description","price"=>650.20)
             );
             foreach($products as $p){
                 printf("
