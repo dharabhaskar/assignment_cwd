@@ -9,6 +9,7 @@
     <title>Gradesheet</title>
 </head>
 
+
 <body>
     <form method="POST" action='include/mark.inc.php'>
         Marks<input type="text" name="marks">

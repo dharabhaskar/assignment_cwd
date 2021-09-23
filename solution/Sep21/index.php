@@ -10,13 +10,22 @@
 
 <body>
     <h1>Product Management</h1>
-
-    <form action="action/product.inc.php" method="POST">
+    <form action="include/product.inc.php" method="POST">
+        <input type="hidden" name="id" id="id"><br />
         Product Name: <input type="text" name="pname" id="pname"><br />
         Product Desc: <input type="text" name="description" id="description"><br />
         Product Price: <input type="text" name="price" id="price"><br />
-        <input type="button" value="Submit" name="submit">
+        <input type="submit" value="submit" name="submit">
+
     </form>
+    <?php
+    require_once('include/functions.inc.php');
+    showerror('stmtfailed', 'invalide sql statement');
+    showsuccess('add_success', 'product data successfully add');
+    showsuccess('del_success', 'product data successfully delete');
+    showsuccess('update_success', 'product data successfully update');
+
+    ?>
     <br />
     <br />
     <br />
@@ -30,10 +39,13 @@
             <th></th>
         </tr>
         <?php
-        $products = array(
-            array("id" => 1, "pname" => "keyboard", "description" => "anything", "price" => 650.20)
-        );
-        //var_dump($products);
+        require_once('include/functions.inc.php');
+        $con = connect_db();
+        $products = fetch_record($con);
+
+        // $products = array(
+        //     array("id" => 1, "pname" => "keyboard", "description" => "description", "price" => 650.20)
+        // );
         foreach ($products as $p) {
             printf("
                         <tr>
