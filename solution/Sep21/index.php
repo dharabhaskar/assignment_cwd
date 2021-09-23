@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Management<<</title>
+    <title>Product Management</title>
 </head>
 <body>
     <h1>Product Management</h1>
@@ -29,7 +29,7 @@
         </tr>
         <?php
             $products=array(
-                array("id"=>1,"pname"=>"keyboard","price"=>650.20)
+                array("id"=>1,"pname"=>"keyboard","description"=>"wireless","price"=>650.20)
             );
             foreach($products as $p){
                 printf("
