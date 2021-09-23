@@ -35,8 +35,8 @@
             <th>Product Name</th>
             <th>Description</th>
             <th>Price</th>
-            <th></th>
-            <th></th>
+            <th>Remove</th>
+            <th>Edit</th>
         </tr>
         <?php
         require_once('include/functions.inc.php');

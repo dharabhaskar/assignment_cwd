@@ -135,3 +135,20 @@ function showsuccess($errortype, $msg)
         ';
     }
 }
+
+function delete_product($con, $id)
+{
+    echo 'Delete product...' . $id;
+    $sql = "delete from product where id=?";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location:../index.php?error=stmtfailed');
+    }
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+
+    $result = mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+
+    return $result;
+}
