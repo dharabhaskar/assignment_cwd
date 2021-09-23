@@ -39,13 +39,9 @@
             <th>Edit</th>
         </tr>
         <?php
-        require_once('include/functions.inc.php');
-        $con = connect_db();
-        $products = fetch_record($con);
-
-        // $products = array(
-        //     array("id" => 1, "pname" => "keyboard", "description" => "description", "price" => 650.20)
-        // );
+        $products = array(
+            array("id" => 1, "pname" => "keyboard", "description" => "wireless", "price" => 650.20)
+        );
         foreach ($products as $p) {
             printf("
                         <tr>
