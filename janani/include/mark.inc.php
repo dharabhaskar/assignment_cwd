@@ -1,7 +1,7 @@
 <?php
-if(isset($_POST["submit"])){
+
+if (isset($_POST["submit"])) {
+    $marks = $_POST['marks'];
     require_once('functions.inc.php');
-    
-    $score=$_POST['marks'];
-    checkgrade($score);
+    checkgrade($marks);
 }

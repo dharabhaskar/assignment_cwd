@@ -11,13 +11,21 @@
 <body>
     <h1>Product Management</h1>
     <form action="include/product.inc.php" method="POST">
-    <input type="hidden" name="id" id="id"><br/>
-        Product Name: <input type="text" name="pname" id="pname"><br/>
-        Product Desc: <input type="text" name="description" id="description"><br/>
-        Product Price: <input type="text" name="price" id="price"><br/>
+        <input type="hidden" name="id" id="id"><br />
+        Product Name: <input type="text" name="pname" id="pname"><br />
+        Product Desc: <input type="text" name="description" id="description"><br />
+        Product Price: <input type="text" name="price" id="price"><br />
         <input type="submit" value="submit" name="submit">
 
     </form>
+    <?php
+    require_once('include/functions.inc.php');
+    showerror('stmtfailed', 'invalide sql statement');
+    showsuccess('add_success', 'product data successfully add');
+    showsuccess('del_success', 'product data successfully delete');
+    showsuccess('update_success', 'product data successfully update');
+
+    ?>
     <br />
     <br />
     <br />
@@ -27,15 +35,15 @@
             <th>Product Name</th>
             <th>Description</th>
             <th>Price</th>
-            <th></th>
-            <th></th>
+            <th>Remove</th>
+            <th>Edit</th>
         </tr>
         <?php
-            $products=array(
-                array("id"=>1,"pname"=>"keyboard","description"=>"wireless","price"=>650.20)
-            );
-            foreach($products as $p){
-                printf("
+        $products = array(
+            array("id" => 1, "pname" => "keyboard", "description" => "wireless", "price" => 650.20)
+        );
+        foreach ($products as $p) {
+            printf("
                         <tr>
                             <td>%d</td>
                             <td>%s</td>
