@@ -2,9 +2,9 @@
 function connect_db()
 {
     $server = 'localhost';
-    $userid = 'test';
-    $password = '1234';
-    $db = 'mydb2';
+    $userid = 'album';
+    $password = '12345';
+    $db = 'test1';
 
     $con = mysqli_connect($server, $userid, $password, $db);
     if (!$con) {
@@ -17,11 +17,14 @@ function connect_db()
 function add_record($con, $pname, $description, $price)
 {
     $sql = "insert into product(pname,description,price) values(?,?,?)";
+    //echo "$sql";
+    //var_dump($con);
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        //header('location:../index.php?error=stmtfailed');
+        header('location:../index.php?error=stmtfailed');
         echo 'invalid sql';
     }
+    //var_dump($stmt);
     mysqli_stmt_bind_param($stmt, 'ssd', $pname, $description, $price);
 
     $result = mysqli_stmt_execute($stmt);

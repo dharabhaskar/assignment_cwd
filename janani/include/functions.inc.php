@@ -2,13 +2,13 @@
 function checkgrade($marks){
     $div='';
     if($marks>=60){
-        $div='first Division';
+        $div='First Division';
     }elseif($marks>=45){
-         $div='second Division';
+         $div='Second Division';
     }elseif($marks>=33){
         $div='Third Division';
     }else{
-        $div='your are failed';
+        $div='Failed';
     }
-    printf('you score is %s', $marks);
+    printf('your Grade is %s', $div);
 }
