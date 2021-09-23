@@ -32,7 +32,7 @@
         </tr>
         <?php
             $products=array(
-                 array("id"=>1,"pname"=>"keyboard","description"=>"description","price"=>650.20)
+                array("id"=>1,"pname"=>"keyboard","description"=>"wireless","price"=>650.20)
             );
             foreach($products as $p){
                 printf("
