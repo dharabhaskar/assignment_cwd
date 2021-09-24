@@ -1,11 +1,11 @@
 <?php
-
+ require_once('prodfunctions.inc.php');
 if(isset($_POST['submit'])){
     $id=$_POST['id'];
     $pname=$_POST['pname'];
     $description=$_POST['description'];
     $price=$_POST['price'];
-    require_once('prodfunctions.inc.php');
+   
     $con = connect_db();
 
 
@@ -27,6 +27,7 @@ if(isset($_POST['submit'])){
 }else if(isset($_GET['action']) && $_GET['action']=='del'){
     //Delete product details
     $id=$_GET['id'];
+    $con = connect_db();
     delete_record($con,$id);
     header('location:../index.php?success=delsuccess');
 }
