@@ -1,0 +1,28 @@
+.grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    padding: 1rem;
+}
+.card{
+    display: flex;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, .1) 0px 4px 6px -1px, rgba(0, 0, 0, .1) 0px 2px 4px -1px;
+    padding: 4px 1rem 10px;
+    flex-direction: column;
+    object-fit: contain;
+
+}
+.card h1.title{
+    font-family: sans-serif, serif;
+}
+.card img.image{
+    object-fit: contain;
+    /* max-width: 30rem;
+    max-height: 30rem; */
+}
+.card p.short{
+    color: #ababab;
+    font-size: larger;
+    text-align: justify;
+}
