@@ -1,0 +1,70 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(85, 85, 85);
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.main-header{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: black;
+    padding: 0 4rem;
+    align-items: center;
+    height: 70px;
+}
+.main-header .nav-bar ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.main-header .nav-bar ul a{
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+}
+.main-header .nav-bar ul a:hover{
+    color: #adadad;
+}
+.main-header .logo{
+    display: flex;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+
+.main-header .logo img.logo-icon{
+    width: 3em;
+}
+
+.main-header .logo .logo-name{
+    margin-top: 7px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.main-header .group{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.main-header .group .search-and-account{
+    display: flex;
+    gap: 2rem;
+}
+.main-header .group .search-and-account a{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    width: 3rem;
+    height: 3rem;
+    color:#fff;
+    align-items: center;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
