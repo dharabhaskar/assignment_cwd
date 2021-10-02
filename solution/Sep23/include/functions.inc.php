@@ -2,9 +2,9 @@
 function connect_db()
 {
     $server = 'localhost';
-    $userid = 'test';
-    $password = '1234';
-    $db = 'mydb2';
+    $userid = 'album';
+    $password = '12345';
+    $db = 'test1';
 
     $con = mysqli_connect($server, $userid, $password, $db);
     if (!$con) {
