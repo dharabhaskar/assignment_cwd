@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Example</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #div{
+            display: flex;
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 10px;
+            align-items: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div">
+        Click Me
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function(){
+            //Simple File data loading
+           /* $('#div').click(function(){
+                $('#div').load('data/data.txt');
+           }); */
+
+           //File data loading with callback function.
+           $('#div').click(function(){
+                $('#div').load('data/data.txt',function(responseText,status,xhr){
+                    if(status=='success'){
+                        alert('Data loaded successfully.');
+                    }else{
+                        alert('Data Failed.');
+                    }
+                });
+           });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Example</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #div{
+            display: flex;
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 10px;
+            align-items: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        Name: <input type="text" name="name" id="name">
+        <input type="button" id="btn" value="Click Me">
+        <textarea id="tarea">
+
+        </textarea>
+    </form>
+
+    <div id="div">
+
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                //Getting values from Form elements into JQuery
+                var name=$('#name').val();
+                //alert('Hello '+name);
+
+                //Setting values to HTML and Form elements
+                $('#div').text('Hello '+name);
+                $('#tarea').val('Hello '+name);
+            });
+
+            $('#div').click(function(){
+                var p=document.createElement("p");
+                //p.innerHTML="This is a Test";
+                $('#div').after(p);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery Example</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+       body{
+           background-color: grey;
+       } 
+      .mainContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70vw;
+        height: 50vh;
+        background-image: linear-gradient(#db249e,#2916d4);
+        border-radius: 20px;
+      }
+      #quote {
+        font-size: 30px;
+        color: white;
+        padding:20px;
+        text-align: center;
+      }
+      #button {
+        background-color: crimson;
+        border-radius: 50px;
+        padding: 16px;
+        width: 100px;
+        text-align: center;
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="container">
+        <div id="quote"></div>
+      </div>
+      <div id="button">Click Me</div>
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      $(document).ready(function () {
+        //https://api.kanye.rest/
+        $("#button").click(function () {
+          $.get("https://api.kanye.rest/", function (data, status) {
+            var q = data.quote;
+            $("#quote").text(q);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
